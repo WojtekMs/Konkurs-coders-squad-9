@@ -250,3 +250,12 @@ void print27(std::vector<int>& vec) {
         return true;
     });
 }
+
+void print28(const std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::partition_copy(vec.begin(), vec.end(), v.begin(), v.end(), [](const int element)
+    {
+        std::cout << element <<  ", ";
+        return true;
+    });
+}
