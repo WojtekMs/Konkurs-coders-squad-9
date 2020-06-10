@@ -200,3 +200,12 @@ void print22(std::vector<int>& vec) {
         return false;
     }, 0);
 }
+
+void print23(const std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::replace_copy_if(vec.begin(), vec.end(), v.begin(), [](const int elem)
+    {
+        std::cout << elem <<  ", ";
+        return false;
+    }, 0);
+}
