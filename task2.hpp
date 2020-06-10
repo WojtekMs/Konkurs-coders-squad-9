@@ -133,4 +133,19 @@ void print14(const std::vector<int>& vec) {
     });
 }
 
+void print15(const std::vector<int>& vec) {
+    std::search(vec.begin(), vec.end(), vec.begin(), vec.end(), [](const int first, const int second)
+    {
+        std::cout << first << ", ";
+        return false;
+    });
+}
+
+void print16(const std::vector<int>& vec) {
+    std::search_n(vec.rbegin(), vec.rend(), vec.size(), 0, [](const int first, const int second)
+    {
+        std::cout << first << ", ";
+        return true;
+    });
+}
 
