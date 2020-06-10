@@ -157,3 +157,12 @@ void print17(std::vector<int>& vec) {
         return true;
     });
 }
+
+void print18(std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::generate(v.begin(), v.end(), [&vec, i{0}]() mutable
+    {
+        std::cout << vec[i++] <<  ", ";
+        return true;
+    });
+}
