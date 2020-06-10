@@ -63,12 +63,6 @@ void reverse10(std::vector<int>& vec) {
 }
 
 void reverse11(std::vector<int>& vec) {
-    std::sort(vec.begin(), vec.end(), [](const auto& first, const auto& second){
-            return first > second;
-    });
-}
-
-void reverse12(std::vector<int>& vec) {
     std::vector<int> temp(vec.begin(), vec.end());
     std::transform(temp.rbegin(), temp.rend(), vec.begin(), [](const auto& el){ return el; });
 }
