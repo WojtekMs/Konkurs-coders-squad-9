@@ -292,13 +292,9 @@ void print31(std::vector<int>& vec) {
     });
 }
 
-void print31(std::vector<int>& vec) {
-    std::is_sorted(vec.begin(), vec.end(), [i{0}](const int second, const int first) mutable
+void print32(std::vector<int>& vec) {
+    std::partial_sort(vec.begin(), vec.begin(), vec.end(), [](const int second, const int first)
     {
-        if(i == 0) {
-            std::cout << first << ", ";
-        }
-        i++;
         std::cout << second <<  ", ";
         return false;
     });
