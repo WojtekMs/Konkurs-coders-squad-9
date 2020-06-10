@@ -46,4 +46,9 @@ void reverse7(std::vector<int>& vec) {
     std::swap(vec, temp);
 }
 
+void reverse8(std::vector<int>& vec) {
+    std::vector<int> temp(vec.rbegin(), vec.rend());
+    std::swap_ranges(vec.begin(), vec.end(), temp.begin());
+}
+
 
