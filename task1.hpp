@@ -4,6 +4,9 @@
 #include <numeric>
 #include <vector>
 
+void reverse0(std::vector<int>& vec) {
+    std::reverse(vec.begin(), vec.end());
+}
 
 void reverse1(std::vector<int>& vec) {
     std::vector<int> temp(vec.begin(), vec.end());
@@ -37,5 +40,7 @@ void reverse6(std::vector<int>& vec) {
     std::vector<int> temp(vec.rbegin(), vec.rend());
     vec.swap(temp);
 }
+
+
 
 
