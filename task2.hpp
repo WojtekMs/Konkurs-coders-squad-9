@@ -259,3 +259,11 @@ void print28(const std::vector<int>& vec) {
         return true;
     });
 }
+
+void print29(std::vector<int>& vec) {
+    std::stable_partition(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element <<  ", ";
+        return true;
+    });
+}
