@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <numeric>
+#include <random>
 #include <vector>
 
 void reverse0(std::vector<int>& vec) {
@@ -56,3 +57,7 @@ void reverse9(std::vector<int>& vec) {
     std::reverse_copy(temp.begin(), temp.end(), vec.begin());
 }
 
+void reverse10(std::vector<int>& vec) {
+    std::vector<int> temp(vec.rbegin(), vec.rend());
+    std::sample(temp.begin(), temp.end(), vec.begin(), temp.size(), std::mt19937{std::random_device{}()});
+}
