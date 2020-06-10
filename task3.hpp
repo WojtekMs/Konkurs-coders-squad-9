@@ -1,7 +1,6 @@
 #pragma once
 
 #include <algorithm>
-#include <numeric>
 #include <string>
 
 bool is_palindrome1(const std::string& str) {
