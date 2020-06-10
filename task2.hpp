@@ -30,3 +30,17 @@ void print3(const std::vector<int>& vec) {
     });
 }
 
+void print4(const std::vector<int>& vec) {
+    std::all_of(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element << ", ";
+        return true;
+    });
+}
+
+void print5(const std::vector<int>& vec) {
+   std::for_each(vec.begin(), vec.end(), [](const int element)
+   {
+       std::cout << element << ", ";
+   });
+}
