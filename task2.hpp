@@ -112,3 +112,25 @@ void print12(const std::vector<int>& vec) {
         return false;
     });
 }
+
+void print13(const std::vector<int>& vec) {
+    std::adjacent_find(vec.begin(), vec.end(), [i{0}](const int first, const int second) mutable
+    {
+        if (i == 0) {
+            std::cout << first << ", ";
+        }
+        i++;
+        std::cout << second << ", ";
+        return false;
+    });
+}
+
+void print14(const std::vector<int>& vec) {
+    std::search(vec.begin(), vec.end(), vec.begin(), vec.end(), [](const int first, const int second)
+    {
+        std::cout << first << ", ";
+        return false;
+    });
+}
+
+
