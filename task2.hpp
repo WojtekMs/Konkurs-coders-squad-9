@@ -76,3 +76,11 @@ void print8(const std::vector<int>& vec) {
         return false;
     });
 }
+
+void print9(const std::vector<int>& vec) {
+    std::find_if_not(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element << ", ";
+        return true;
+    });
+}
