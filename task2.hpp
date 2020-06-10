@@ -184,11 +184,19 @@ void print20(std::vector<int>& vec) {
     });
 }
 
-void print21(std::vector<int>& vec) {
+void print21(const std::vector<int>& vec) {
     std::vector<int> v(vec.size());
     std::remove_copy_if(vec.begin(), vec.end(), v.begin(), [](const int elem)
     {
         std::cout << elem <<  ", ";
         return false;
     });
+}
+
+void print22(std::vector<int>& vec) {
+    std::replace_if(vec.begin(), vec.end(), [](const int elem)
+    {
+        std::cout << elem <<  ", ";
+        return false;
+    }, 0);
 }
