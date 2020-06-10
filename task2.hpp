@@ -183,3 +183,12 @@ void print20(std::vector<int>& vec) {
         return false;
     });
 }
+
+void print21(std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::remove_copy_if(vec.begin(), vec.end(), v.begin(), [](const int elem)
+    {
+        std::cout << elem <<  ", ";
+        return false;
+    });
+}
