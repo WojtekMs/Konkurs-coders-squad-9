@@ -33,5 +33,9 @@ void reverse5(std::vector<int>& vec) {
     });
 }
 
+void reverse6(std::vector<int>& vec) {
+    std::vector<int> temp(vec.rbegin(), vec.rend());
+    vec.swap(temp);
+}
 
 
