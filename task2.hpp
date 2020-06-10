@@ -92,3 +92,11 @@ void print10(const std::vector<int>& vec) {
         return true;
     });
 }
+
+void print11(const std::vector<int>& vec) {
+    std::find_first_of(vec.begin(), vec.end(), vec.begin(), vec.begin() + 1, [](const int first, const int second)
+    {
+        std::cout << first << ", ";
+        return false;
+    });
+}
