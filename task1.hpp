@@ -51,4 +51,8 @@ void reverse8(std::vector<int>& vec) {
     std::swap_ranges(vec.begin(), vec.end(), temp.begin());
 }
 
+void reverse9(std::vector<int>& vec) {
+    std::vector<int> temp(vec.begin(), vec.end());
+    std::reverse_copy(temp.begin(), temp.end(), vec.begin());
+}
 
