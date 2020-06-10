@@ -44,3 +44,19 @@ void print5(const std::vector<int>& vec) {
        std::cout << element << ", ";
    });
 }
+
+// 
+// void print6(const std::vector<int>& vec) {
+    // std::for_each_n(vec.begin(), vec.size(), [](const int element)
+    // {
+        // std::cout << element << ", ";
+    // });
+// }
+
+void print6(const std::vector<int>& vec) {
+    std::count_if(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element << ", ";
+        return element == 0;
+    });
+}
