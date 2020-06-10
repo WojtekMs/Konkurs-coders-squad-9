@@ -175,3 +175,11 @@ void print19(const std::vector<int>& vec) {
         return true;
     });
 }
+
+void print20(std::vector<int>& vec) {
+    std::remove_if(vec.begin(), vec.end(), [](const int elem)
+    {
+        std::cout << elem <<  ", ";
+        return false;
+    });
+}
