@@ -45,14 +45,6 @@ void print5(const std::vector<int>& vec) {
    });
 }
 
-
-// void print7(const std::vector<int>& vec) {
-//     std::for_each_n(vec.begin(), vec.size(), [](const int element)
-//     {
-//         std::cout << element << ", ";
-//     });
-// }
-
 void print6(const std::vector<int>& vec) {
     std::count_if(vec.begin(), vec.end(), [](const int element)
     {
@@ -297,5 +289,12 @@ void print32(std::vector<int>& vec) {
     {
         std::cout << second <<  ", ";
         return false;
+    });
+}
+
+void prin33(const std::vector<int>& vec) {
+    std::for_each_n(vec.begin(), vec.size(), [](const int element)
+    {
+        std::cout << element << ", ";
     });
 }
