@@ -5,7 +5,6 @@
 #include <vector>
 
 
-
 void reverse1(std::vector<int>& vec) {
     std::vector<int> temp(vec.begin(), vec.end());
     std::copy(temp.rbegin(), temp.rend(), vec.begin());
@@ -25,5 +24,14 @@ void reverse4(std::vector<int>& vec) {
     std::vector<int> temp(vec.begin(), vec.end());
     std::move_backward(temp.begin(), temp.end(), vec.rend());
 }
+
+void reverse5(std::vector<int>& vec) {
+    std::vector<int> temp(vec.rbegin(), vec.rend());
+    std::generate(vec.begin(), vec.end(), [&temp, i{-1}]() mutable
+    {
+        return temp[++i];
+    });
+}
+
 
 
