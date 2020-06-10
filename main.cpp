@@ -6,5 +6,5 @@
 int main() {
     std::string str("kajak");
 
-    std::cout << std::boolalpha << is_palindrome3(str) << "\n";
+    std::cout << std::boolalpha << is_palindrome4(str) << "\n";
 }
