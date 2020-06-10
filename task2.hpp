@@ -234,3 +234,19 @@ void print25(const std::vector<int>& vec) {
         return false;
     });
 }
+
+void print26(const std::vector<int>& vec) {
+    std::is_partitioned(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element <<  ", ";
+        return false;
+    });
+}
+
+void print27(std::vector<int>& vec) {
+    std::partition(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element <<  ", ";
+        return true;
+    });
+}
