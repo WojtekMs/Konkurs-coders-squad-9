@@ -21,4 +21,9 @@ void reverse3(std::vector<int>& vec) {
     std::move(temp.begin(), temp.end(), vec.begin());
 }
 
+void reverse4(std::vector<int>& vec) {
+    std::vector<int> temp(vec.begin(), vec.end());
+    std::move_backward(temp.begin(), temp.end(), vec.rend());
+}
+
 
