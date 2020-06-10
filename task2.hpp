@@ -267,3 +267,39 @@ void print29(std::vector<int>& vec) {
         return true;
     });
 }
+
+void print30(const std::vector<int>& vec) {
+    std::is_sorted(vec.begin(), vec.end(), [i{0}](const int second, const int first) mutable
+    {
+        if(i == 0) {
+            std::cout << first << ", ";
+        }
+        i++;
+        std::cout << second <<  ", ";
+        return false;
+    });
+}
+
+void print31(std::vector<int>& vec) {
+    std::is_sorted(vec.begin(), vec.end(), [i{0}](const int second, const int first) mutable
+    {
+        if(i == 0) {
+            std::cout << first << ", ";
+        }
+        i++;
+        std::cout << second <<  ", ";
+        return false;
+    });
+}
+
+void print31(std::vector<int>& vec) {
+    std::is_sorted(vec.begin(), vec.end(), [i{0}](const int second, const int first) mutable
+    {
+        if(i == 0) {
+            std::cout << first << ", ";
+        }
+        i++;
+        std::cout << second <<  ", ";
+        return false;
+    });
+}
