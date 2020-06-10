@@ -149,7 +149,7 @@ void print16(const std::vector<int>& vec) {
     });
 }
 
-void print17(std::vector<int>& vec) {
+void print17(const std::vector<int>& vec) {
     std::vector<int> v(vec.size());
     std::copy_if(vec.begin(), vec.end(), v.begin(), [](const int first)
     {
@@ -158,9 +158,18 @@ void print17(std::vector<int>& vec) {
     });
 }
 
-void print18(std::vector<int>& vec) {
+void print18(const std::vector<int>& vec) {
     std::vector<int> v(vec.size());
     std::generate(v.begin(), v.end(), [&vec, i{0}]() mutable
+    {
+        std::cout << vec[i++] <<  ", ";
+        return true;
+    });
+}
+
+void print19(const std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::generate_n(v.begin(), v.size(), [&vec, i{0}]() mutable
     {
         std::cout << vec[i++] <<  ", ";
         return true;
