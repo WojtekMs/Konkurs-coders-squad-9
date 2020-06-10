@@ -84,3 +84,11 @@ void print9(const std::vector<int>& vec) {
         return true;
     });
 }
+
+void print10(const std::vector<int>& vec) {
+    std::find_end(vec.rbegin(), vec.rend(), vec.begin(), vec.end(), [](const int first, const int second)
+    {
+        std::cout << first << ", ";
+        return true;
+    });
+}
