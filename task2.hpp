@@ -68,3 +68,11 @@ void print7(const std::vector<int>& vec) {
         return true;
     });
 }
+
+void print8(const std::vector<int>& vec) {
+    std::find_if(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element << ", ";
+        return false;
+    });
+}
