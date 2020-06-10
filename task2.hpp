@@ -12,7 +12,6 @@ void print1(const std::vector<int>& vec) {
         std::cout << first << ", ";
         return first == second;
     });
-
 }
 
 void print2(const std::vector<int>& vec) {
@@ -21,5 +20,13 @@ void print2(const std::vector<int>& vec) {
         std::cout << element << ", ";
         return false;
     });
-
 }
+
+void print3(const std::vector<int>& vec) {
+    std::none_of(vec.begin(), vec.end(), [](const int element)
+    {
+        std::cout << element << ", ";
+        return false;
+    });
+}
+
