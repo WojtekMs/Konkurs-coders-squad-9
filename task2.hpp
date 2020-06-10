@@ -209,3 +209,15 @@ void print23(const std::vector<int>& vec) {
         return false;
     }, 0);
 }
+
+void print24(std::vector<int>& vec) {
+    std::unique(vec.begin(), vec.end(), [i{0}](const int first, const int second) mutable
+    {
+        if(i == 0) {
+            std::cout << first << ", ";
+        }
+        i++;
+        std::cout << second <<  ", ";
+        return false;
+    });
+}
