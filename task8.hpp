@@ -1,35 +1,34 @@
 #pragma once
-#include <algorithm>
 #include <iostream>
-#include <vector>
+
 
 void print_spaces(int count) {
-    std::vector<int> temp(count);
-    std::transform(temp.begin(), temp.end(), temp.begin(), [](int elem) {
-        std::cout << " ";
-        return 0;
-    });
+    if (count < 1) {
+        return;
+    }
+    std::cout << " ";
+    print_spaces(--count);
 }
 
 void print_stars(int count) {
-    std::vector<int> temp(count);
-    std::transform(temp.begin(), temp.end(), temp.begin(), [](int elem) {
-        std::cout << "*";
-        return 0;
-    });
+    if (count < 1) {
+        return;
+    }
+    std::cout << "*";
+    print_stars(--count);
 }
 
 void draw_tree(int height) {
     const int rows = height * 2 - 1;
-    std::vector<int> vec(rows);
-    std::transform(vec.begin(), vec.end(), vec.begin(), [row{1}](int elem) mutable {
-        if (row % 2) {
-            int space_count = 6 - row / 2;
-            print_spaces(space_count);
-            int star_count = row;
-            print_stars(star_count);
-            std::cout << '\n';
-        }
-        return row++;
-    });
+    if (rows < 1) {
+        return;
+    }
+
+    draw_tree(--height);
+    if (rows % 2) {
+        int space_count = 6 - rows / 2;
+        print_spaces(space_count);
+        print_stars(rows);
+        std::cout << "\n";
+    }
 }

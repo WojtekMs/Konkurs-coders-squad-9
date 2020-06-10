@@ -2,4 +2,5 @@
 
 int main(){
     draw_tree(7);
+   
 }
