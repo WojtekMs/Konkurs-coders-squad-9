@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <iostream>
-#include <numeric>
 #include <vector>
 
 
@@ -292,7 +291,7 @@ void print32(std::vector<int>& vec) {
     });
 }
 
-void prin33(const std::vector<int>& vec) {
+void print33(const std::vector<int>& vec) {
     std::for_each_n(vec.begin(), vec.size(), [](const int element)
     {
         std::cout << element << ", ";
