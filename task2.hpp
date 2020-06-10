@@ -45,12 +45,12 @@ void print5(const std::vector<int>& vec) {
    });
 }
 
-// 
-// void print6(const std::vector<int>& vec) {
-    // std::for_each_n(vec.begin(), vec.size(), [](const int element)
-    // {
-        // std::cout << element << ", ";
-    // });
+
+// void print7(const std::vector<int>& vec) {
+//     std::for_each_n(vec.begin(), vec.size(), [](const int element)
+//     {
+//         std::cout << element << ", ";
+//     });
 // }
 
 void print6(const std::vector<int>& vec) {
@@ -58,5 +58,13 @@ void print6(const std::vector<int>& vec) {
     {
         std::cout << element << ", ";
         return element == 0;
+    });
+}
+
+void print7(const std::vector<int>& vec) {
+    std::mismatch(vec.begin(), vec.end(), vec.begin(), vec.end(), [](const int first, const int second)
+    {
+        std::cout << first << ", ";
+        return true;
     });
 }
