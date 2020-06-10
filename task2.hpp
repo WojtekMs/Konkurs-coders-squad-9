@@ -221,3 +221,16 @@ void print24(std::vector<int>& vec) {
         return false;
     });
 }
+
+void print25(const std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::unique_copy(vec.begin(), vec.end(), v.begin(), [i{0}](const int first, const int second) mutable
+    {
+        if(i == 0) {
+            std::cout << first << ", ";
+        }
+        i++;
+        std::cout << second <<  ", ";
+        return false;
+    });
+}
