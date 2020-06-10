@@ -149,3 +149,11 @@ void print16(const std::vector<int>& vec) {
     });
 }
 
+void print17(std::vector<int>& vec) {
+    std::vector<int> v(vec.size());
+    std::copy_if(vec.begin(), vec.end(), v.begin(), [](const int first)
+    {
+        std::cout << first << ", ";
+        return true;
+    });
+}
