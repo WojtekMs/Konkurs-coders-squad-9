@@ -52,6 +52,17 @@ std::vector<int> fibo4(int n) {
     return vec;
 }
 
+std::vector<int> fibo5(int n) {
+    std::vector<int> vec(n);
+    std::transform(vec.begin(), vec.end(), vec.begin(), [i{0}, j{1}](int el) mutable {
+            int temp = i + j;
+            i = j;
+            j = temp;
+            return i;
+    });
+    return vec;
+}
+
 void print(const std::vector<int>& vec) {
     for (const auto elem : vec) {
         std::cout << elem << ", ";
@@ -62,7 +73,7 @@ void print(const std::vector<int>& vec) {
 
 
 int main() {
-    auto vec = fibo4(10);
+    auto vec = fibo5(10);
     print(vec);
 
 }
