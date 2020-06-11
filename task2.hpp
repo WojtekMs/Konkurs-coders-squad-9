@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <iterator>
 #include <vector>
 
 
@@ -296,4 +297,10 @@ void print33(const std::vector<int>& vec) {
     {
         std::cout << element << ", ";
     });
+}
+
+void print34(const std::vector<int>& vec){
+    std::transform(vec.begin(),vec.end(),
+                   std::ostream_iterator<int>(std::cout, ", "),
+                   [](const auto & vec){ return vec; });
 }
