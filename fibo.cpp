@@ -41,6 +41,17 @@ std::vector<int> fibo3(const int count) {
     return vec;
 }
 
+std::vector<int> fibo4(int n) {
+    std::vector<int> vec(n);
+    std::generate(vec.begin(), vec.end(), [i{0}, j{1}]() mutable {
+            int temp = i + j;
+            i = j;
+            j = temp;
+            return i;
+    });
+    return vec;
+}
+
 void print(const std::vector<int>& vec) {
     for (const auto elem : vec) {
         std::cout << elem << ", ";
@@ -51,11 +62,7 @@ void print(const std::vector<int>& vec) {
 
 
 int main() {
-    // auto vec = fibo1(10);
-    // copy(begin(vec), end(vec), std::ostream_iterator<int>{std::cout, " "});
-    // vec = fibo2(10);
-    // copy(begin(vec), end(vec), std::ostream_iterator<int>{std::cout, " "});
-    auto vec = fibo3(10);
+    auto vec = fibo4(10);
     print(vec);
 
 }
