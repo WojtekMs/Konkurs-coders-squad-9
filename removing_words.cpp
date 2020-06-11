@@ -1,10 +1,19 @@
 #include <algorithm>
 #include <cctype>
+#include <codecvt>
 #include <iostream>
+#include <iterator>
+#include <locale>
 #include <numeric>
 #include <sstream>
 #include <string>
 #include <vector>
+
+                              
+std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> strconverter;
+std::wstring to_wstring(std::string str){
+    return strconverter.from_bytes(str);
+}
 
 std::string removeWords(const std::string& sentence) {
     std::istringstream ss(sentence);
@@ -13,10 +22,10 @@ std::string removeWords(const std::string& sentence) {
 
     results.erase(std::remove_if(results.begin(), results.end(),
                                  [](std::string str) {
-                                     return (str.length() == 4 and not std::ispunct(str.back())) ||
-                                            (str.length() == 6 and not std::ispunct(str.back())) ||
-                                            (str.length() == 5 and std::ispunct(str.back())) ||
-                                            (str.length() == 7 and std::ispunct(str.back()));
+                                     return ((to_wstring(str)).length() == 4 and not std::ispunct(str.back())) ||
+                                            ((to_wstring(str)).length() == 6 and not std::ispunct(str.back())) ||
+                                            ((to_wstring(str)).length() == 5 and std::ispunct(str.back())) ||
+                                            ((to_wstring(str)).length() == 7 and std::ispunct(str.back()));
                                  }),
                   results.end());
     auto add_spaces = [](std::string a, std::string b) {
