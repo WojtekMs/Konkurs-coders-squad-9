@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <functional>
 #include <iostream>
 #include <iterator>
@@ -21,9 +22,40 @@ std::vector<int> fibo2(int n) {
     return arr;
 }
 
+int nth_fib(const int nth_element) {
+    if (nth_element < 0) {
+        return -1;
+    }
+    if (nth_element <= 1) {
+        return nth_element;
+    }
+    return nth_fib(nth_element - 1) + nth_fib(nth_element - 2);
+}
+
+std::vector<int> fibo3(const int count) {
+    std::vector<int> vec(count);
+    std::generate(vec.begin(), vec.end(), [i{0}]() mutable
+    {
+        return nth_fib(++i);
+    });
+    return vec;
+}
+
+void print(const std::vector<int>& vec) {
+    for (const auto elem : vec) {
+        std::cout << elem << ", ";
+    }
+    std::cout << '\n';
+}
+
+
+
 int main() {
-    auto vec = fibo1(10);
-    copy(begin(vec), end(vec), std::ostream_iterator<int>{std::cout, " "});
-    vec = fibo2(10);
-    copy(begin(vec), end(vec), std::ostream_iterator<int>{std::cout, " "});
+    // auto vec = fibo1(10);
+    // copy(begin(vec), end(vec), std::ostream_iterator<int>{std::cout, " "});
+    // vec = fibo2(10);
+    // copy(begin(vec), end(vec), std::ostream_iterator<int>{std::cout, " "});
+    auto vec = fibo3(10);
+    print(vec);
+
 }
